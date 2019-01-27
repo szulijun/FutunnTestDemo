@@ -1,7 +1,9 @@
 package page;
 
+import business.SearchBiz;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import utils.Locator;
 
 public class MainPage extends BasePage {
     private static MainPage mainPage;
@@ -11,7 +13,9 @@ public class MainPage extends BasePage {
             mainPage = new MainPage();
         return mainPage;
     }
-    public void gangguEle(){
-        click(By.xpath("//*[@text='港股']"));
+
+    public SearchBiz clickSearch(){
+        click(Locator.getByLocator("search","home"));
+        return new SearchBiz();
     }
 }

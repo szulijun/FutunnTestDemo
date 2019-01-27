@@ -6,6 +6,6 @@ public class TestCase1 extends BaseCase {
 
     @Test
     public void test1(){
-        MainPage.getInstance().gangguEle();
+        MainPage.getInstance().clickSearch().search("pdd");
     }
 }
