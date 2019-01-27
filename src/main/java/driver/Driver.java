@@ -1,5 +1,6 @@
 package driver;
 
+import config.GlobalConfig;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
@@ -22,21 +23,19 @@ public class Driver {
     }
 
     private void initDriver(){
-        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("deviceName", "192.168.56.101:5555");
-        desiredCapabilities.setCapability("appPackage", "cn.futu.trader");
-        desiredCapabilities.setCapability("appActivity", "cn.futu.app.main.activity.MainActivity");
-        desiredCapabilities.setCapability("noReset", "true");
-        desiredCapabilities.setCapability("unicodeKeyboard", true);
-        desiredCapabilities.setCapability("resetKeyboard", true);
+        final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        final GlobalConfig config = GlobalConfig.load("/config/globalConfig.yaml");
+        config.getAppiumConfig().getCapabilities().keySet().forEach(key->{
+            Object value = config.getAppiumConfig().getCapabilities().get(key);
+            desiredCapabilities.setCapability(key,value);
+        });
 
         try {
-            appiumDriver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"),desiredCapabilities);
+            appiumDriver = new AndroidDriver<WebElement>(new URL(config.getAppiumConfig().getUrl()),desiredCapabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        appiumDriver.manage().timeouts().implicitlyWait(6,TimeUnit.SECONDS);
+        appiumDriver.manage().timeouts().implicitlyWait(config.getAppiumConfig().getWait(),TimeUnit.SECONDS);
     }
 
     public void startDriver(){
@@ -45,5 +44,9 @@ public class Driver {
 
     public AppiumDriver<WebElement> getDriver(){
         return appiumDriver;
+    }
+
+    public void closeDriver(){
+        appiumDriver.quit();
     }
 }
