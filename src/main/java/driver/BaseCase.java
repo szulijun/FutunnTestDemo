@@ -1,4 +1,4 @@
-package task;
+package driver;
 
 import driver.Driver;
 import org.testng.annotations.AfterClass;

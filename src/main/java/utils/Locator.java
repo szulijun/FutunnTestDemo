@@ -1,6 +1,6 @@
 package utils;
 
-import config.PageConfig;
+import utils.config.PageConfig;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 

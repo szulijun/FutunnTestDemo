@@ -1,4 +1,4 @@
-package config;
+package utils.config;
 
 import java.util.Map;
 
