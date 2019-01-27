@@ -1,6 +1,4 @@
-import driver.BaseCase;
-import driver.Driver;
-import org.testng.annotations.BeforeClass;
+import task.BaseCase;
 import org.testng.annotations.Test;
 import page.MainPage;
 
