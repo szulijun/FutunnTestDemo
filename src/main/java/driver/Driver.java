@@ -1,11 +1,15 @@
 package driver;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import utils.config.GlobalConfig;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -48,5 +52,13 @@ public class Driver {
 
     public void closeDriver(){
         appiumDriver.quit();
+    }
+
+    public void screenShot(String path){
+        try {
+            FileUtils.copyFile(appiumDriver.getScreenshotAs(OutputType.FILE),new File(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
