@@ -4,7 +4,7 @@ appiumConfig:
   wait: 6
   capabilities:
     platformName: android
-    deviceName: 192.168.56.101:5555
+    deviceName: 127.0.0.1:62025
     appPackage: cn.futu.trader
     appActivity: cn.futu.app.main.activity.MainActivity
     unicodeKeyboard: true
