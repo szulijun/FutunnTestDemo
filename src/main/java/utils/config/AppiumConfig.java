@@ -7,6 +7,7 @@ public class AppiumConfig {
     private String url;
     private Integer wait;
     private Map<String,Object> capabilities;
+    private int maxretrycount;
 
     public String getApp() {
         return app;
@@ -38,5 +39,13 @@ public class AppiumConfig {
 
     public void setCapabilities(Map<String, Object> capabilities) {
         this.capabilities = capabilities;
+    }
+
+    public int getMaxretrycount() {
+        return maxretrycount;
+    }
+
+    public void setMaxretrycount(int maxretrycount) {
+        this.maxretrycount = maxretrycount;
     }
 }

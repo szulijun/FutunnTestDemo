@@ -10,3 +10,4 @@ appiumConfig:
     unicodeKeyboard: true
     resetKeyboard: true
     noReset: true
+  maxretrycount: 2

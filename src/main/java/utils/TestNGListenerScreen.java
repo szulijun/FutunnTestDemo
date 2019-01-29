@@ -1,6 +1,7 @@
 package utils;
 
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
@@ -9,10 +10,13 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class TestNGListenerScreen extends TestListenerAdapter {
+    private Logger logger = Logger.getLogger(TestNGListenerScreen.class);
+
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        takeScreenShot();
         super.onTestFailure(iTestResult);
+        takeScreenShot();
+        logger.info(iTestResult.getName() + " Failure");
     }
 
     public void takeScreenShot(){
