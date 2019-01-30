@@ -1,4 +1,8 @@
 package driver;
 
-public class Navigate {
-}
+import business.SearchBiz;
+import utils.Locator;
+
+//public interface Navigate {
+//    default SearchBiz goToSearchPage(){
+//    }
