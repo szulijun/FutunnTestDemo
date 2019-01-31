@@ -18,6 +18,11 @@ public class Locator {
             case "stockdetail":
                 loc = config.getStockdetaillocator().get(key);
                 break;
+            case "my":
+                loc = config.getMypagelocator().get(key);
+                break;
+            case "login":
+                loc = config.getLoginpagelocator().get(key);
         }
         String bymethod = loc.split(">")[0];
         String byvalue = loc.split(">")[1];

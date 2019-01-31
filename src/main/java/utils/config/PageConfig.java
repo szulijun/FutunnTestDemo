@@ -10,6 +10,8 @@ public class PageConfig {
     private Map<String,String> homepagelocator;
     private Map<String,String> searchpagelocator;
     private Map<String,String> stockdetaillocator;
+    private Map<String,String> mypagelocator;
+    private Map<String,String> loginpagelocator;
     public static PageConfig load(String path){
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         PageConfig pageConfig = new PageConfig();
@@ -44,5 +46,21 @@ public class PageConfig {
 
     public void setStockdetaillocator(Map<String, String> stockdetaillocator) {
         this.stockdetaillocator = stockdetaillocator;
+    }
+
+    public Map<String, String> getMypagelocator() {
+        return mypagelocator;
+    }
+
+    public void setMypagelocator(Map<String, String> mypagelocator) {
+        this.mypagelocator = mypagelocator;
+    }
+
+    public Map<String, String> getLoginpagelocator() {
+        return loginpagelocator;
+    }
+
+    public void setLoginpagelocator(Map<String, String> loginpagelocator) {
+        this.loginpagelocator = loginpagelocator;
     }
 }

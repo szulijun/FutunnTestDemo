@@ -1,8 +1,5 @@
 package page;
-
-import business.SearchBiz;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import driver.Driver;
 import utils.Locator;
 
 public class MainPage extends BasePage {
@@ -14,8 +11,18 @@ public class MainPage extends BasePage {
         return mainPage;
     }
 
-    public SearchBiz clickSearch(){
+    public SearchPage clickSearch(){
         click(Locator.getByLocator("search","home"));
-        return new SearchBiz();
+        return new SearchPage();
+    }
+
+    public MyPage clickMy(){
+        click(Locator.getByLocator("my","home"));
+        return new MyPage();
+    }
+
+    public MainPage backToMainPage(){
+        Driver.getInstance().startDriver();
+        return getInstance();
     }
 }

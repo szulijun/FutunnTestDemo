@@ -4,6 +4,7 @@ homepagelocator:
   zixuan_all: text>全部
   zixuan_ganggu: text>港股
   search: id>iv_icon
+  my: id>tab_home_btn
 searchpagelocator:
   input_box: id>global_search_input_text
   first_result: xpath>//*[@class="android.view.ViewGroup" and @clickable="true" and @focusable="false"][1]
@@ -11,3 +12,9 @@ stockdetaillocator:
   xingtaijiedu: text>形态解读
   zhibiao: id>indicator_dial
   expand_btn: id>expand_btn
+mypagelocator:
+  login: id>login_btn
+loginpagelocator:
+  username: id>account_tex
+  password: id>pwd_tex
+  loginbtn: id>login_btn
