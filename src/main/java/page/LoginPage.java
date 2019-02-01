@@ -15,6 +15,11 @@ public class LoginPage extends BasePage{
     private void clickLoginBtn(){
         click(Locator.getByLocator("loginbtn","login"));
     }
+
+    public LoginPage clickOtherLogin(){
+        click(Locator.getByLocator("other","login"));
+        return this;
+    }
     //登陆成功
     public MainPage loginSuccess(String username,String password){
         sendUsername(username);

@@ -6,17 +6,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class BasePage {
-    public AppiumDriver<WebElement> driver;
-    public BasePage(){
-        driver = Driver.getInstance().getDriver();
+    public WebElement find(By by){
+        //todo: 弹框处理
+        WebElement element=null;
+        try{
+            element = Driver.getInstance().getDriver().findElement(by);
+        }catch(Exception e){
+            //todo: getPageSource + xpath
+            //弹框xpath列表
+        }
+        return element;
     }
 
     public void click(By by){
-        driver.findElement(by).click();
+        find(by).click();
     }
 
     public void sendKeys(By by,String content){
-        driver.findElement(by).sendKeys(content);
+        find(by).sendKeys(content);
     }
 
 

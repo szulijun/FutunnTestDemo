@@ -15,6 +15,7 @@ stockdetaillocator:
 mypagelocator:
   login: id>login_btn
 loginpagelocator:
+  other: id>otherLogin
   username: id>account_tex
   password: id>pwd_tex
   loginbtn: id>login_btn
